@@ -1,0 +1,53 @@
+<% include partials/_header%>
+
+<div class="container mt-5">
+    <form action="/print/<%= data.ID_Usuario %>" method="POST">
+        <div class="form-group">
+            <input type="text" name="Nombre" value="<%= data.Nombre %>" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" name="Apellido" value="<%= data.Apellido %>" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" name="DNI" value="<%= data.DNI %>" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="number" name="Edad" value="<%= data.Edad %>" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" name="Email" value="<%= data.Email %>" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" name="Usuario" value="<%= data.Usuario %>" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="password" name="Contraseña" value="<%= data.Contraseña %>" class="form-control">
+        </div>
+    </form>
+    <a href="javascript:genPDF()" class="btn btn-info">Imprimir Informe</a>
+
+    <!--Div para impresion de datos-->
+    <div class="d-none form-group" id='testdiv' >
+        <h1>Datos de usuarios</h1>
+        <p></p>
+        <div class="form-group">
+            <h6>Nombre y Apellido: </h6><a id="nombre"><%= data.Nombre %> <%= data.Apellido %></a>
+        </div>
+        <div class="form-group">
+            <h6>DNI: </h6><a><%= data.DNI %></a>
+        </div>
+        <div class="form-group">
+            <h6>Edad: </h6><a><%= data.Edad %></a>
+        </div>
+        <div class="form-group">
+            <h6>E-mail: </h6><a><%= data.Email %></a>
+        </div>
+        <div class="form-group">
+            <h6>Usuario: </h6><a><%= data.Usuario %></a>
+        </div>
+    </div>
+</div>
+
+
+
+<% include partials/_footer%>

@@ -1,0 +1,44 @@
+<% include partials/_header%>
+
+<div id="testdivedit">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/update/<%= data.ID_Usuario %>" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="Nombre" value="<%= data.Nombre %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Apellido" value="<%= data.Apellido %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="DNI" value="<%= data.DNI %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="Edad" value="<%= data.Edad %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Email" value="<%= data.Email %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Usuario" value="<%= data.Usuario %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="Contraseña" value="<%= data.Contraseña %>" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-info">
+                            Editar datos
+                        </button>
+                        <a href="javascript:generaPDF()" class="btn btn-info">Generate PDF</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button" class="form-control" (clic)='generarPDF'>Imprimir</button>
+</div>
+
+<% include partials/_footer%>
